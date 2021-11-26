@@ -125,3 +125,24 @@ clearCartBtn.addEventListener("click", () => {
 });
 
 showCartBtn.addEventListener("click", handleFilterSearch);
+
+
+//Feature that causes the `hero` to change image every 3 seconds
+
+
+const urls = [
+  'url(https://images.unsplash.com/photo-1603912699214-92627f304eb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80)',
+  'url(https://images.unsplash.com/photo-1573879500655-98f2012dd1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)',
+  'url(https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)',
+  
+ 
+];
+
+
+const interval = setInterval(() => {
+  let active = Math.floor(Math.random() * (urls.length));
+  const bgWrapper = document.querySelector(".overlay");
+  bgWrapper.style.background = urls[active];
+     active++;
+     if (active == urls.length) {active = 0;}
+}, 3000);

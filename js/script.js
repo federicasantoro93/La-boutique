@@ -23,7 +23,16 @@ function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
       )
     );
     setCartProductsNum();
-    alert(`Prodotto aggiunto al carrello, numero prodotti: ${cartList.length}`);
+
+    //Modal
+    modal.style.opacity = "1";
+    modal.style.zIndex = "4"; 
+    //modal.style.display = 'block';
+    modalP.textContent = `Your cart now contains the following number of products: ${cartList.length}`;
+    
+    
+
+    //alert(`Your cart now contains the following number of products: ${cartList.length}`);
     // Nel caso in cui volessimo aggiungere una interazione col LocalStorage
 
     localStorage.setItem("totCartitems", JSON.stringify(cartList));
@@ -129,15 +138,11 @@ showCartBtn.addEventListener("click", handleFilterSearch);
 
 //Feature that causes the `hero` to change image every 3 seconds
 
-
 const urls = [
   'url(https://images.unsplash.com/photo-1603912699214-92627f304eb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80)',
   'url(https://images.unsplash.com/photo-1573879500655-98f2012dd1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)',
   'url(https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)',
-  
- 
 ];
-
 
 const interval = setInterval(() => {
   let active = Math.floor(Math.random() * (urls.length));
@@ -146,3 +151,18 @@ const interval = setInterval(() => {
      active++;
      if (active == urls.length) {active = 0;}
 }, 3000);
+
+//Modal
+
+const modal = document.querySelector('.modal');
+const continueBtn = document.querySelector('#continue');
+const modalP = document.querySelector('#modal_p');
+
+
+
+continueBtn.addEventListener('click', () => {
+  modal.style.opacity = "0";
+  modal.style.zIndex = "-1"; 
+  //modal.style.display = 'none';
+  })
+

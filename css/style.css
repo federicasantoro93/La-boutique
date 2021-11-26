@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Mohave:wght@400;700&family=Press+Start+2P&display=swap");
+:root {
+  --main_color: #353535;
+}
+
+body {
+  font-family: "Mohave", sans-serif;
+  margin: 0;
+  border: 0;
+}
+
+h4 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: var(--main_color);
+}
+
+img {
+  width: 90px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.cart {
+  text-align: right;
+  width: 80px;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  height: 350px;
+  width: 100%;
+
+  background-image: url("https://media.istockphoto.com/photos/fits-perfect-picture-id938463764");
+  background-position-y: 35%;
+  background-size: cover;
+
+  filter: contrast(1.4) sepia(0.2);
+}
+
+.wrapper .__hero {
+  position: relative;
+  background: rgba(0, 0, 0, 0.335);
+  top: 0;
+  height: 350px;
+  width: 100%;
+  z-index: 2;
+}
+
+.wrapper .__hero .intestazione {
+  position: absolute;
+  padding: 30px;
+  height: 100%;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  z-index: 3;
+}
+
+.wrapper .__hero .intestazione h2 {
+  margin-bottom: 0;
+}
+
+.cartBanner {
+  display: flex;
+  justify-content: flex-end;
+  background-image: linear-gradient(135deg, #f6416c 10%, #fff6b7 100%);
+}
+
+.cartBanner .cartProductsNum {
+  margin-right: 20px;
+}
+
+.cartBanner .clearCart {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.cartBanner .clearCart:hover {
+  transform: scale(1.6);
+}
+
+.cartBanner .cartProductsNum::before {
+  content: "🛒";
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.wrapper__titles {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper__titles h2 {
+  font-size: 2rem;
+}
+
+.wrapper__titles h4 {
+  font-size: 0.9rem;
+}
+
+.inputFilterSearch,
+.labelFilterSearch {
+  width: 150px;
+  align-self: center;
+}
+
+.showCartBtn {
+  margin: 20px 0;
+  padding: 10px 5px;
+  width: 150px;
+  align-self: center;
+
+  border: 0;
+  background-color: lightcoral;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.showCartBtn:hover {
+  background-color: lightpink;
+}
+
+.wrapper__products {
+  margin: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 1s;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 7.5px;
+  padding: 10px;
+
+  width: 150px;
+
+  border: 2px solid rgb(50, 50, 50);
+
+  opacity: 0.78;
+  cursor: pointer;
+  transition: all 0.35s;
+}
+
+.product:hover {
+  transform: scale(0.9);
+  border: 2px solid var(--main_color);
+}
+
+.product:active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.product p {
+  align-self: flex-end;
+}
+
+.sideViewAnim {
+  opacity: 0;
+}

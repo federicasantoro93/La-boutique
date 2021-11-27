@@ -139,15 +139,41 @@ strong {
   background-color: #73340b; 
 }
 
+.show__cart__btn{
+  width: 40px;
+  height:40px;
+  border: 0;
+  font-size: 20px;
+  background-color: transparent;
+
+  cursor: pointer;
+  transition: 0.35s;
+
+  padding: 0px 5px 5px 5px;
+  margin: 8px 5px 0px 0px;
+}
+
+.show__cart__btn:hover {
+  
+  transform: scale(1.6);
+}
+
 .cartBanner .cartProductsNum {
   margin-right: 20px;
+  color:  #20251f;
+  font-size: 16px;
+  font-weight: 800;
+
 }
 
 .cartBanner .clearCart {
+  font-size: 16px;
   border: 0;
   background: transparent;
   cursor: pointer;
   transition: 0.35s;
+  margin: -2px 5px 0px 15px;
+  
 }
 
 .cartBanner .clearCart:hover {
@@ -155,49 +181,65 @@ strong {
 }
 
 .cartBanner .cartProductsNum::before {
-  content: "🛒";
   margin-right: 10px;
   font-size: 1.5rem;
 }
 
 .wrapper__titles {
   display: flex;
+  position: relative;
   justify-content: center;
 }
 
 .wrapper__titles h2 {
+  position: absolute;
+  top:0px;
   font-size: 2rem;
 }
 
 .wrapper__titles h4 {
+  position: absolute;
+  top:60px;
   font-size: 0.9rem;
+  
+}
+
+.search__wrapper{
+  position: absolute;
+  top: 520px;
+  
+  margin: 0px 0px 0px 28px;
+  align-self: left;
 }
 
 .inputFilterSearch,
 .labelFilterSearch {
+  display: inline;
   width: 150px;
-  align-self: center;
+  align-self: left;
 }
 
+
 .showCartBtn {
-  margin: 20px 0;
-  padding: 10px 5px;
-  width: 150px;
-  align-self: center;
+  display: inline;
+  margin: 0px 0;
+  padding: 5px 5px;
+  width: 100px;
+  align-self: left;
 
   border: 0;
-  background-color: lightcoral;
+  background-color: #20251f;
   color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
 .showCartBtn:hover {
-  background-color: lightpink;
+  background-color: #20251f;
 }
 
 .wrapper__products {
-  margin: 20px 40px;
+  margin: 150px 20px 0px;
   display: flex;
   flex-wrap: wrap;
   transition: all 1s;

@@ -1,5 +1,5 @@
 function setCartProductsNum() {
-  cartProductsNum.textContent = `Numero prodotti: ${cartList.length}`;
+  cartProductsNum.textContent = `Number of products: ${cartList.length}`;
 }
 
 function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
@@ -36,6 +36,7 @@ function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
     // Nel caso in cui volessimo aggiungere una interazione col LocalStorage
 
     localStorage.setItem("totCartitems", JSON.stringify(cartList));
+
 
     // console.log("LOCAL STORAGE ==>", localStorageValue);
   });
@@ -91,6 +92,15 @@ function handleFilterSearch() {
   }, 1000);
 }
 
+
+function handleGoCartBtn(){
+  document.querySelectorAll('.product')
+  .forEach((product) => wrapperProducts.removeChild(product));
+  
+   renderProducts(JSON.parse(localStorageTot));
+}
+
+
 // Async await
 const getProductsList = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
@@ -119,12 +129,16 @@ const cartProductsNum = document.querySelector(".cartProductsNum");
 const clearCartBtn = document.querySelector(".clearCart");
 const showCartBtn = document.querySelector(".showCartBtn");
 const inputFilterSearch = document.querySelector(".inputFilterSearch");
+const modal = document.querySelector('.modal');
+const continueBtn = document.querySelector('#continue');
+const modalP = document.querySelector('#modal_p');
+const goCartBtn = document.querySelector('.show__cart__btn');
 
 // Flusso generale
 const parsedTotCardItemsLen =
   JSON.parse(localStorage.getItem("totCartitems"))?.length || 0;
 
-cartProductsNum.textContent = `Numero prodotti: ${parsedTotCardItemsLen || 0}`;
+cartProductsNum.textContent = `Numbers of products: ${parsedTotCardItemsLen || 0}`;
 getProductsList();
 
 clearCartBtn.addEventListener("click", () => {
@@ -154,15 +168,22 @@ const interval = setInterval(() => {
 
 //Modal
 
-const modal = document.querySelector('.modal');
-const continueBtn = document.querySelector('#continue');
-const modalP = document.querySelector('#modal_p');
-
-
-
 continueBtn.addEventListener('click', () => {
   modal.style.opacity = "0";
   modal.style.zIndex = "-1"; 
+  window.location.reload();
+   //Chiedere di un metodo più pulito!!! In pratica se il local storage è vuoto anche se aggiungo un oggetto
+   //se clicco sul carrello è vuoto, se faccio refresh il problema sparisce
+   //Quindi ho impostato il refresh al click della chiusura della modale
   //modal.style.display = 'none';
   })
 
+  
+  goCartBtn.addEventListener('click', () =>{
+    
+
+      handleGoCartBtn();
+  });
+  
+  
+  

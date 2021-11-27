@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>La boutique</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -19,16 +19,20 @@
         </div>
       </div>
       <div class="cartBanner">
-        <p class="cartProductsNum">Carrello vuoto</p>
-        <button class="clearCart">❌</button>
+        <button class="show__cart__btn">🛒</button>
+        <p class="cartProductsNum">Empty cart</p>
+        <button class="clearCart">✖️</button>
+       
       </div>
-      <div class="wrapper__titles">
+        <div class="wrapper__titles">
         <h2>La boutique</h2>
         <h4>Trend e design</h4>
       </div>
-      <label for="search-filter" class="labelFilterSearch">Cerca</label>
-      <input type="text" class="inputFilterSearch" id="search-filter" />
-      <button class="showCartBtn">Ricerca</button>
+      <div class="search__wrapper">
+      <label for="search-filter" class="labelFilterSearch">🔍</label>
+      <input type="text" class="inputFilterSearch" id="search-filter" placeholder="Search for products" />
+      <button class="showCartBtn">Search</button>
+      </div>
       <div class="wrapper__products"></div>
     </div>
 
